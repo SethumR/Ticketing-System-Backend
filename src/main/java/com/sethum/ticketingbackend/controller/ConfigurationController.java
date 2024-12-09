@@ -21,3 +21,5 @@ public class ConfigurationController {
         return simulationService.stopSimulation();
     }
 }
+
+
