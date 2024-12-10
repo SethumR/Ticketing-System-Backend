@@ -40,29 +40,29 @@ cd Ticketing-System-Backend
 mvn clean install
 ```
 
-### 3. Run the Spring Boot application:
+#### 3. Run the Spring Boot application:
 
 ```bash
 mvn spring-boot:run
 ```
 
-### 4. The backend will be available at http://localhost:8080.
+#### 4. The backend will be available at http://localhost:8080.
 
 ---
 
-## Usage Instructions
+## 🛠️ Usage Instructions
 
-### Configuring and Starting the System
+#### Configuring and Starting the System
 
 - The frontend will send a POST request to the backend with the configuration values entered by the user.
 - The backend receives these values, processes the ticket simulation in real time, and outputs logs to the terminal.
 - The backend sends real-time updates back to the frontend via WebSocket, which are then displayed to the user.
 
-### Saving Configuration 
+#### Saving Configuration 
 
 - The configuration values entered by the user are saved to a .json file on the server for persistence, allowing users to load previous configurations
 
-### API Endpoints
+#### API Endpoints
 
 - POST /start-simulation: Starts the ticket simulation with the user-provided configuration.
 - GET /load-configuration: Loads the most recent configuration from the .json file.
@@ -72,12 +72,12 @@ mvn spring-boot:run
 
 ## 💻 System Architecture
 
-### Frontend: React.js and Tailwind CSS
+Frontend: React.js and Tailwind CSS
 - Handles user inputs and displays real-time updates.
-### Backend: Spring Boot
+Backend: Spring Boot
 - Handles simulation logic and WebSocket communication.
-### Real-Time Communication: WebSocket for sending updates to the frontend.
-### Data Persistence: The configuration is stored in a .json file.
+Real-Time Communication: WebSocket for sending updates to the frontend.
+Data Persistence: The configuration is stored in a .json file.
 
 ---
 
