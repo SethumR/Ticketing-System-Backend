@@ -32,6 +32,23 @@ public class  ConfigurationController {
         return simulationService.stopSimulation();
     }
 
+    @GetMapping("/load")
+    public Configuration loadConfiguration() {
+        try {
+            // Read the Configuration object from the JSON file
+            File file = new File("config.json");
+            if (file.exists()) {
+                return objectMapper.readValue(file, Configuration.class);
+            } else {
+                System.err.println("INFO: Configuration file not found.");
+                return new Configuration(); // Return an empty configuration if file does not exist
+            }
+        } catch (IOException e) {
+            System.err.println("ERROR: Failed to load configuration: " + e.getMessage());
+            return new Configuration(); // Return an empty configuration in case of an error
+        }
+    }
+
     private void saveConfigurationToFile(Configuration config) {
         try {
             // Save the Configuration object as a JSON file
