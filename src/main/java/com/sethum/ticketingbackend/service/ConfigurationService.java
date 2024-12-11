@@ -14,6 +14,10 @@ public class ConfigurationService {
     private final List<Thread> customerThreads = new ArrayList<>();
     private boolean isRunning = false;
 
+    /**
+     * @param configuration the configuration object containing simulation settings
+     * @return a status message indicating the result of starting the simulation
+     */
     public String startSimulation(Configuration configuration) {
         try {
             int totalTickets = Integer.parseInt(configuration.getTotalTickets());
@@ -78,6 +82,12 @@ public class ConfigurationService {
         }
     }
 
+    /**
+     * Stops the simulation by interrupting all vendor and customer threads.
+     * It also clears the lists of vendor and customer threads.
+     *
+     * @return a status message indicating the result of stopping the simulation
+     */
     public String stopSimulation() {
         isRunning = false;
 

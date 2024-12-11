@@ -21,6 +21,13 @@ public class  ConfigurationController {
         this.objectMapper = objectMapper;
     }
 
+    /**
+     * Starts the simulation with the given configuration.
+     * This method saves the configuration to a file and then starts the simulation.
+     *
+     * @param config the configuration to start the simulation with
+     * @return a message indicating the status of the simulation start
+     */
     @PostMapping("/start")
     public String startSimulation(@RequestBody Configuration config) {
         saveConfigurationToFile(config);
@@ -59,5 +66,3 @@ public class  ConfigurationController {
         }
     }
 }
-
-
